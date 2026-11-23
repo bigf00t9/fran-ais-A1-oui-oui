@@ -162,3 +162,99 @@ button:focus-visible {
   outline: 3px solid var(--accent-red);
   outline-offset: 3px;
 }
+
+.primary-button.small {
+  font-size: 18px;
+  padding: 10px 20px;
+}
+
+/* ---------- Settings screen ---------- */
+
+/* Settings start at the top of the page instead of the middle. */
+.screen.settings {
+  justify-content: flex-start;
+}
+
+.settings h1 {
+  font-size: 36px;
+  margin: 0 0 24px;
+}
+
+/* A white box that groups one set of settings. */
+.card {
+  width: 100%;
+  text-align: left;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px 28px;
+  margin-bottom: 24px;
+}
+
+.card h2 {
+  font-size: 22px;
+  margin: 0 0 4px;
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 15px;
+  margin: 0 0 16px;
+}
+
+.field-label {
+  display: block;
+  font-weight: 600;
+  font-size: 15px;
+  margin: 16px 0 6px;
+}
+
+.card select,
+.card input[type="text"] {
+  width: 100%;
+  font: inherit;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.card select:focus,
+.card input[type="text"]:focus {
+  outline: 3px solid var(--accent-soft);
+  border-color: var(--accent);
+}
+
+.button-row {
+  display: flex;
+  gap: 12px;
+  margin: 20px 0 16px;
+}
+
+/* A yellow box for problems the learner should know about. */
+.warning {
+  text-align: left;
+  background: #fef3c7;
+  border: 1px solid #f59e0b;
+  color: #78350f;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin: 0 0 24px;
+  font-size: 16px;
+}
+
+/* "hidden" must win over the display rules above. */
+.warning[hidden] {
+  display: none;
+}
+
+.warning ul {
+  margin: 8px 0 0;
+  padding-left: 20px;
+}
+
+.warning a {
+  color: inherit;
+  font-weight: 600;
+}

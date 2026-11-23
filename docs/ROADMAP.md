@@ -22,7 +22,7 @@ The full requirements are in [`PRD.md`](./PRD.md).
 - The GitHub Pages link shows the same page.
 - The console shows no errors.
 
-### [ ] M2. Moving between screens
+### [x] M2. Moving between screens
 **Build:** a simple way to switch between screens without reloading the page: **Home**, **Session** (placeholder), **Stats** (placeholder) and **Settings** (placeholder), with a top navigation bar.
 **Test it:**
 - Clicking each menu item shows the right screen, and the browser does not reload.

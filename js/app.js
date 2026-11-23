@@ -30,6 +30,11 @@ App.currentScreenFromAddress = function () {
 };
 
 App.start = function () {
+  // Start each part of the app. Settings must start before speech,
+  // so it is already listening when the voice list arrives.
+  App.settings.start();
+  App.speech.start();
+
   // Links like href="#stats" change the part of the address after "#".
   // The browser does NOT reload the page for that; it fires a "hashchange"
   // event instead, and we show the matching screen. This also makes the
