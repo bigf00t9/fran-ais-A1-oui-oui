@@ -1,11 +1,15 @@
 /* Colours are kept in one place so the look is easy to change later. */
 :root {
   --bg: #f6f4ef;
+  --surface: #ffffff;
+  --border: #e3e0d8;
   --text: #1f2430;
   --muted: #5c6370;
   --accent: #1d4ed8;        /* French blue */
   --accent-hover: #1e40af;
+  --accent-soft: #e0e7ff;
   --accent-red: #dc2626;    /* French red, used as a small highlight */
+  --topbar-height: 64px;
 }
 
 * {
@@ -20,16 +24,68 @@ body {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   font-size: 18px;
   line-height: 1.5;
-  /* Centre the content in the middle of the screen. */
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.home {
-  text-align: center;
-  max-width: 640px;
+/* ---------- Top navigation bar ---------- */
+
+.topbar {
+  height: var(--topbar-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  gap: 8px;
+}
+
+.nav-link {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.nav-link:hover {
+  color: var(--text);
+  background: var(--bg);
+}
+
+/* The link for the screen you are on. */
+.nav-link.active {
+  color: var(--accent);
+  background: var(--accent-soft);
+  font-weight: 600;
+}
+
+/* ---------- Screens ---------- */
+
+/* Each screen fills the space under the top bar, with its content centred. */
+.screen {
+  min-height: calc(100vh - var(--topbar-height));
+  max-width: 720px;
+  margin: 0 auto;
   padding: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* "hidden" screens must stay hidden even though .screen sets display: flex. */
+.screen[hidden] {
+  display: none;
 }
 
 .title {
@@ -60,24 +116,49 @@ body {
   margin: 0 0 40px;
 }
 
-.primary-button {
+.placeholder h1 {
+  font-size: 36px;
+  margin: 0 0 12px;
+}
+
+/* ---------- Buttons ---------- */
+
+.primary-button,
+.secondary-button {
+  display: inline-block;
   font: inherit;
   font-weight: 600;
+  text-decoration: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.primary-button {
   font-size: 20px;
   color: #ffffff;
   background: var(--accent);
   border: none;
-  border-radius: 10px;
   padding: 16px 32px;
-  cursor: pointer;
 }
 
 .primary-button:hover {
   background: var(--accent-hover);
 }
 
-/* A clear outline when the button is reached with the keyboard (Tab key). */
-.primary-button:focus-visible {
+.secondary-button {
+  color: var(--accent);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 10px 20px;
+}
+
+.secondary-button:hover {
+  border-color: var(--accent);
+}
+
+/* A clear outline when something is reached with the keyboard (Tab key). */
+a:focus-visible,
+button:focus-visible {
   outline: 3px solid var(--accent-red);
   outline-offset: 3px;
 }

@@ -7,15 +7,41 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <main class="home">
-    <h1 class="title">Français au quotidien</h1>
-    <p class="welcome">Ten minutes of French practice, every day.</p>
-    <p class="subtitle">Listening · Genders · Conjugation · Sentences</p>
+  <!-- Top navigation bar. Each link points to a screen by its name after "#". -->
+  <header class="topbar">
+    <a class="brand" href="#home">Français au quotidien</a>
+    <nav class="nav">
+      <a class="nav-link" href="#home" data-screen="home">Home</a>
+      <a class="nav-link" href="#stats" data-screen="stats">Stats</a>
+      <a class="nav-link" href="#settings" data-screen="settings">Settings</a>
+    </nav>
+  </header>
 
-    <!-- This button does nothing yet. It will start the session in a later milestone. -->
-    <button id="start-button" class="primary-button" type="button">
-      Start today's session
-    </button>
+  <!-- Every screen lives on this one page. Only one is shown at a time;
+       the others are hidden. Switching never reloads the page. -->
+  <main>
+    <section class="screen home" id="screen-home" data-screen="home">
+      <h1 class="title">Français au quotidien</h1>
+      <p class="welcome">Ten minutes of French practice, every day.</p>
+      <p class="subtitle">Listening · Genders · Conjugation · Sentences</p>
+      <a id="start-button" class="primary-button" href="#session">Start today's session</a>
+    </section>
+
+    <section class="screen placeholder" id="screen-session" data-screen="session" hidden>
+      <h1>Today's session</h1>
+      <p class="subtitle">The four exercises will appear here (Milestones 4–8).</p>
+      <a class="secondary-button" href="#home">← Back to home</a>
+    </section>
+
+    <section class="screen placeholder" id="screen-stats" data-screen="stats" hidden>
+      <h1>Stats</h1>
+      <p class="subtitle">Your accuracy and weakest items will appear here (Milestone 12).</p>
+    </section>
+
+    <section class="screen placeholder" id="screen-settings" data-screen="settings" hidden>
+      <h1>Settings</h1>
+      <p class="subtitle">Voice, accents, backup and more will appear here (Milestones 3 and 13).</p>
+    </section>
   </main>
 
   <!-- Scripts load in order with plain script tags (no modules), so the app
