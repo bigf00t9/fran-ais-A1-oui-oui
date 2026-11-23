@@ -76,6 +76,11 @@ App.speech = {
     window.speechSynthesis.speak(utterance);
   },
 
+  // Stop talking (for example when leaving a screen).
+  stop: function () {
+    if (App.speech.isSupported()) window.speechSynthesis.cancel();
+  },
+
   speak: function (text) {
     App.speech.speakAtRate(text, App.speech.NORMAL_RATE);
   },

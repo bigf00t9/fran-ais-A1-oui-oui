@@ -28,7 +28,7 @@ The full requirements are in [`PRD.md`](./PRD.md).
 - Clicking each menu item shows the right screen, and the browser does not reload.
 - "Start today's session" opens the Session placeholder.
 
-### [ ] M3. The browser speaks French
+### [x] M3. The browser speaks French
 **Build:** `js/speech.js`, which chooses a fr-FR voice and has `speak(text)` and `speakSlow(text)` functions. Add a test button to the Settings screen that says a sample sentence, plus a list of available voices to pick from. Show a warning if no French voice is found.
 **Test it:**
 - Clicking "Test voice" says *"Bonjour, comment ça va ?"* in a French voice.

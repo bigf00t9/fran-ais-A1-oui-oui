@@ -258,3 +258,193 @@ button:focus-visible {
   color: inherit;
   font-weight: 600;
 }
+
+/* ---------- Exercises (session screen) ---------- */
+
+.button-row.centered {
+  justify-content: center;
+}
+
+.exercise {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 36px 20px;
+}
+
+/* The exercise's name on the left, "Sentence 2 of 6" on the right. */
+.exercise-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.part-label {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.progress-text {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.instruction {
+  font-size: 22px;
+  margin: 16px 0 4px;
+}
+
+/* The big text box where answers are typed. */
+.answer-input {
+  width: 100%;
+  font: inherit;
+  font-size: 24px;
+  padding: 14px 16px;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.answer-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+.accent-bar {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.accent-button {
+  font: inherit;
+  font-size: 20px;
+  width: 44px;
+  height: 40px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.accent-button:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* ---------- Feedback after checking an answer ---------- */
+
+.feedback {
+  text-align: left;
+}
+
+.feedback[hidden],
+#listening-question[hidden] {
+  display: none;
+}
+
+.result-headline {
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center;
+  margin: 16px 0 20px;
+}
+
+.result-headline.good {
+  color: #15803d;
+}
+
+.result-headline.bad {
+  color: var(--accent-red);
+}
+
+.feedback-label {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 16px 0 6px;
+}
+
+.word-diff {
+  font-size: 22px;
+  line-height: 2.1;
+  margin: 0;
+}
+
+.word {
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+.word-correct {
+  color: #15803d;
+  background: #dcfce7;
+}
+
+/* Right word, but the accents differ (only in lenient mode). */
+.word-correct.word-accent {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.word-wrong {
+  color: #991b1b;
+  background: #fee2e2;
+}
+
+.word-wrong s {
+  opacity: 0.75;
+}
+
+.word-missing {
+  color: #991b1b;
+  border: 2px dashed #f87171;
+}
+
+.word-missing::after {
+  content: " (missing)";
+  font-size: 14px;
+}
+
+.word-extra {
+  color: var(--muted);
+  background: #f1f0ec;
+}
+
+.correct-sentence {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.translation {
+  color: var(--muted);
+  font-style: italic;
+  margin: 4px 0 8px;
+}
+
+/* The small line listing keyboard shortcuts. */
+.shortcuts {
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+  margin: 24px 0 0;
+}
+
+kbd {
+  font-family: inherit;
+  font-size: 12px;
+  border: 1px solid var(--border);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  padding: 0 5px;
+  background: var(--bg);
+}

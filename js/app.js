@@ -22,6 +22,15 @@ App.showScreen = function (name) {
   });
 
   window.scrollTo(0, 0);
+
+  // Stop any French still being read aloud from the previous screen.
+  App.speech.stop();
+
+  // Opening the session screen starts a fresh round of listening practice.
+  // (In Milestone 8 this becomes the full four-part session.)
+  if (name === "session") {
+    App.listening.begin();
+  }
 };
 
 // Read the screen name from the address bar: ".../index.html#stats" gives "stats".
@@ -34,6 +43,7 @@ App.start = function () {
   // so it is already listening when the voice list arrives.
   App.settings.start();
   App.speech.start();
+  App.listening.start();
 
   // Links like href="#stats" change the part of the address after "#".
   // The browser does NOT reload the page for that; it fires a "hashchange"
