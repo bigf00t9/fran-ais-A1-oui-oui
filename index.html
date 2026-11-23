@@ -24,6 +24,13 @@
       <h1 class="title">Français au quotidien</h1>
       <p class="welcome">Ten minutes of French practice, every day.</p>
       <p class="subtitle">Listening · Genders · Conjugation · Sentences</p>
+
+      <!-- Shown only when the browser has no French voice (see settings.js). -->
+      <div class="warning" id="home-voice-warning" hidden>
+        Your browser has no French voice installed, so listening practice may sound wrong.
+        <a href="#settings">See how to fix it in Settings</a>.
+      </div>
+
       <a id="start-button" class="primary-button" href="#session">Start today's session</a>
     </section>
 
@@ -38,14 +45,37 @@
       <p class="subtitle">Your accuracy and weakest items will appear here (Milestone 12).</p>
     </section>
 
-    <section class="screen placeholder" id="screen-settings" data-screen="settings" hidden>
+    <section class="screen settings" id="screen-settings" data-screen="settings" hidden>
       <h1>Settings</h1>
-      <p class="subtitle">Voice, accents, backup and more will appear here (Milestones 3 and 13).</p>
+
+      <div class="card">
+        <h2>French voice</h2>
+        <p class="hint">The app reads French aloud with a voice built into your browser.</p>
+
+        <!-- Shown only when no French voice is found (see settings.js). -->
+        <div class="warning" id="voice-warning" hidden></div>
+
+        <label class="field-label" for="voice-select">Voice</label>
+        <select id="voice-select"></select>
+
+        <label class="field-label" for="voice-test-text">Sentence to try</label>
+        <input id="voice-test-text" type="text" value="Bonjour, comment ça va ?" spellcheck="false">
+
+        <div class="button-row">
+          <button id="voice-test" class="primary-button small" type="button">▶ Test voice</button>
+          <button id="voice-test-slow" class="secondary-button" type="button">🐢 Slow</button>
+        </div>
+        <p class="hint">For now, your voice choice resets when you reload the page. Saving it comes in a later milestone.</p>
+      </div>
+
+      <p class="subtitle">Accents, backup and more will appear here (Milestone 13).</p>
     </section>
   </main>
 
   <!-- Scripts load in order with plain script tags (no modules), so the app
        also works when index.html is opened straight from your computer. -->
+  <script src="js/speech.js"></script>
+  <script src="js/settings.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
