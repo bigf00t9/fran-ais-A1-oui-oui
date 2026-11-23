@@ -15,7 +15,7 @@ The full requirements are in [`PRD.md`](./PRD.md).
 
 ## Phase A: Foundations
 
-### [ ] M1. Hello page, live on GitHub Pages
+### [x] M1. Hello page, live on GitHub Pages
 **Build:** `index.html`, `css/style.css` and `js/app.js` with a title, a short welcome line and a "Start today's session" button that does nothing yet. Turn on GitHub Pages for the repository.
 **Test it:**
 - Opening `index.html` shows the title and the button, centred on a desktop-sized page.
